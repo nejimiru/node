@@ -1,4 +1,5 @@
 FROM debian:jessie
+MAINTAINER UFO
 RUN apt-get update && \
     apt-get install bash-completion git curl -y && \
     curl -sL https://deb.nodesource.com/setup_7.x | bash - \
@@ -6,5 +7,4 @@ RUN apt-get update && \
     mkdir ~/.bash && cd ~/.bash && \
     git clone git://github.com/jimeh/git-aware-prompt.git
 ADD bashrc /root/.bashrc
-
 CMD [ "bash" ]
